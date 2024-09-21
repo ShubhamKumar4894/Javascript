@@ -12,6 +12,9 @@
     }
 </style>
 <body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
     <!-- <div class="parent">
         <div class="days">Mondays</div>
         <div class="days">Tuesday</div>
@@ -32,7 +35,7 @@ const parent= document.querySelector('.parent')
     console.log(days.nextElementSibling)
     console.log("Nodes are-", parent.childNodes)
 </script> -->
-<script>
+<!-- <script>
     const div= document.createElement('div')
     console.log(div)
     div.className="parent"
@@ -43,5 +46,33 @@ const parent= document.querySelector('.parent')
     div.appendChild(addedText)
 
     document.body.appendChild(div)
+</script> -->
+
+<script>
+    function addLanguage(langName){
+        const li= document.createElement('li')
+        li.innerHTML=(langName)
+        document.querySelector('.language').appendChild(li)
+
+    }
+    // addLanguage("java")
+    // addLanguage("python")
+
+    //optimize way
+    function optimizeAdd(langName){
+        const li= document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    optimizeAdd("cpp")
+    optimizeAdd("Typescript")
+
+    const langSelected=document.querySelector("li:nth-child(2)")
+    const li= document.createElement('li')
+    li.appendChild(document.createTextNode("golang"))
+    langSelected.replaceWith(li)
+    
+
 </script>
 </html>
