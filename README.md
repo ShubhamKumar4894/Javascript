@@ -1,2 +1,0 @@
-# Javascript
-js learning phase
