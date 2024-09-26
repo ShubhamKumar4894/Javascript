@@ -17,30 +17,52 @@
             <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
         </ul>
    </div> -->
+   <!-- <h1>This is javascript</h1>
+   <button id="button">stop</button> -->
+
    <h1>This is javascript</h1>
-   <button id="button">stop</button>
+   <button id="start">start</button>
+   <button id="stop">stop</button>
 </body>
 <script>
+    const printName=setInterval(function(){
+        console.log("shubham",Date.now);
+    },1000);
 
-    // setTimeout(function(){
-    //     console.log("shubham")
-    // },3000)
-    // const displayName= function(){
-    //     console.log("shubham");
+    clearInterval(printName);
+
+    const start=document.getElementById('start');
+
+    start.addEventListener('click',function(e){
+        storeId=setInterval(function(){
+            console.log('shubham',Date.now());
+        },1000)
+    });
+
+    const stop= document.querySelector('#stop');
+    stop.addEventListener('click', function(e){
+        clearInterval(storeId);
+    });
+    //stop.addEventListener()
+
+    // // setTimeout(function(){
+    // //     console.log("shubham")
+    // // },3000)
+    // // const displayName= function(){
+    // //     console.log("shubham");
+    // // }
+    // // setTimeout(displayName,3000);
+
+    // const changeText= function(){
+    //     document.querySelector('h1').innerHTML="this is cpp";
     // }
-    // setTimeout(displayName,3000);
-
-    const changeText= function(){
-        document.querySelector('h1').innerHTML="this is cpp";
-    }
-    const changeMe= setTimeout(changeText,2000);
-    const button= document.querySelector('#button');
-    button.addEventListener('click',function(){
-        clearTimeout(changeMe);
-        console.log("timeout ended");
-    })
-</script>
-
+    // const changeMe= setTimeout(changeText,2000);
+    // const button= document.querySelector('#button');
+    // button.addEventListener('click',function(){
+    //     clearTimeout(changeMe);
+    //     console.log("timeout ended");
+    // })
+</script> 
 
 
 
